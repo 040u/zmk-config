@@ -1,6 +1,26 @@
 name: Build ZMK firmware
+
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Debug west manifest
+        run: |
+          cat config/west.yml
+
+      - name: Check ZMK branch contents
+        run: |
+          west init -l config
+          west update zmk
+          cd zmk
+          git status
+          git branch --all
+          git rev-parse HEAD
+          ls app/include/dt-bindings/zmk/
+
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
