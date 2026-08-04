@@ -8,16 +8,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Debug west manifest
+      - name: Install west
         run: |
-          cat config/west.yml
+          pip install west
 
-      - name: Check ZMK branch contents
+      - name: Check west manifest
         run: |
           west init -l config
           west update zmk
           cd zmk
-          git status
           git branch --all
           git rev-parse HEAD
           ls app/include/dt-bindings/zmk/
