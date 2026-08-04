@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: darknao
-      revision: main
+      revision: darknao/rgb-dts
       import: app/west.yml
   self:
     path: config
