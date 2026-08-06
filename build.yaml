@@ -25,7 +25,7 @@ include:
       - experimental_rgb_layer
       - hid_pointing
       - hid_pointing_smooth_scrolling
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_EXPERIMENTAL_RGB_LAYER=y
 
   - board: glove80_rh
     snippets:
@@ -33,4 +33,4 @@ include:
       - studio-rpc-usb-uart
       - hid_pointing
       - hid_pointing_smooth_scrolling
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_EXPERIMENTAL_RGB_LAYER=y
