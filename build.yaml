@@ -28,3 +28,5 @@ include:
   - board: glove80_rh
     snippets:
       - experimental_rgb_layer
+      - studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
